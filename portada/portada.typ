@@ -1,8 +1,8 @@
 #import "../data.typ": *
 #import "../sizes.typ": *
 
-#let portada() = context {
-  table(
+#context {
+  grid(
     columns: (20%, 1fr, 20%),
     align: center,
     image("escudo_upm.png", height: 13%),
@@ -52,7 +52,7 @@
     }
   }
 
-  v(5cm	)
+  v(1fr)
   context {
     set text(size: large_size)
     [
@@ -61,9 +61,45 @@
     ]
   }
 
-	v(4cm)
-	context {
-		set align(center)
-		[Madrid, #fecha.display("[month repr:long] [year]")]
-	}
+  v(4cm)
+  context {
+    set align(center)
+    [Madrid, #display_fecha]
+  }
+  v(2cm)
+
+  pagebreak()
+
+
+  [
+    Este Trabajo Fin de #estudios se ha depositado en la ETSI Informáticos de la Universidad Politécnica de Madrid para su defensa.
+  ]
+
+  v(4cm)
+  [
+    _Trabajo Fin de #estudios _\
+    #estudios en #titulo_estudios
+
+
+  ]
+  stack(dir: ltr, [_Título:_], h(0.5cm), block(width: 88%)[#titulo_trabajo])
+
+  [#display_fecha]
+
+  v(4cm)
+
+  grid(
+    align: left,
+    columns: (auto, 85%),
+    column-gutter: 0.5cm,
+		row-gutter: 0.3cm,
+    [_Autor:_], [#nombre_autor],
+		[_Tutor:_], [
+    #nombre_tutor\
+    #departamento\
+    Escuela Técnica Superior de Ingenieros Informáticos\
+    Universidad Politécnica de Madrid
+  ]
+  )
+
 }
