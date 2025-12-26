@@ -47,7 +47,7 @@ Para elaborar la memoria final del trabajo con esta plantilla, seguir los siguie
 + Observa el fichero documento principal y cómo se van incluyendo los contenidos de la memoria a partir de los ficheros en el directorio `secciones`.
 + Por supuesto puedes modificar la estructura de secciones propuestas para adecuarla al tipo de trabajo que realices (no olvides modificar y reordenar los `#include` en el documento principal).
 + Si no sabes Typst te recomendamos explorar el contenido de los ficheros para aprender un uso básico y algunas buenas prácticas, además de revisar la documentación y referencia oficial.
-+ Si usas bibliografía, tendrás que meter entradas con formato Hayagriva @hayagriva-docs `secciones/biblio.yml`, o puedes cambiarlo a formato BibTeX @bibtex, cambiano la extensión a `.bib` y actualizando el documento principal
++ Si usas bibliografía, tendrás que meter entradas con formato Hayagriva @hayagriva-docs `secciones/biblio.yml`, o puedes cambiarlo a formato BibTeX @bibtex, cambiando la extensión a `.bib` y actualizando el documento principal
 
 
 == Algunas notas sobre el uso de Typst <sec:typst>
