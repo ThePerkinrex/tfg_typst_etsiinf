@@ -8,6 +8,9 @@
 #set text(lang: "es", size: normal_size)
 #set page(paper: "a4", margin: (y: 3.5cm, x: 3cm))
 
+// Si quieres usar comillas altas en vez de angulares, descomenta la siguiente linea
+// #set smartquote(quotes: "“”")
+
 #set par(justify: true)
 
 #show: codly-init.with()

@@ -40,3 +40,20 @@ typst-raw:
   author: "Typst"
   url: https://typst.app/docs/reference/text/raw/
   description: "Official reference documentation for the raw element in Typst, used for syntax highlighting and code blocks."
+
+typst-software:
+  type: repository
+  title: Typst
+  author: 
+    - Mädje, Laurenz
+    - Haug, Martin
+    - The Typst Project Developers
+  license: Apache-2.0
+  url: https://github.com/typst/typst
+
+tfg-latex-etsiinf:
+  type: repository
+  title: "Plantilla LaTeX para el Trabajo de Fin de Grado (ETSIINF)"
+  author: Herranz, Ángel
+  url: https://github.com/aherranz/tfg_latex_etsiinf/tree/main
+  description: "Repositorio con la plantilla oficial de LaTeX para la realización de la Memoria del Trabajo de Fin de Grado en la ETSIINF (UPM)."
