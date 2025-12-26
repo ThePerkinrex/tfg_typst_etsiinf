@@ -1,5 +1,6 @@
 #import "sizes.typ": *
 #import "util.typ":custom_outline_size, custom_outline_space
+#import "translation.typ": get-i8n
 #import "@preview/codly:1.3.0": *
 #import "@preview/codly-languages:0.1.1": *
 #import "@preview/drafting:0.2.2": *
@@ -19,6 +20,29 @@
 
 #let page_zone = counter(<page-zone>)
 
+#show outline.entry.where(
+  level: 1
+): set block(above: 1.2em)
+
+#show outline.entry.where(
+  level: 1
+): set text(weight: "bold")
+#set outline.entry(fill: repeat([.], gap: 0.45em))
+#show outline.entry.where(
+  level: 1
+): set outline.entry(fill: none)
+
+#show outline.entry.where(
+  level: 1
+): it => {
+  let sz = custom_outline_size.at(it.element.location())
+  let space = custom_outline_space.at(it.element.location())
+  set text(size: sz) if sz != none
+  set block(above: space) if space != none
+  it
+  // [#(sz, it.element.location()) #it]
+}
+
 #include "portada/portada.typ"
 
 
@@ -30,7 +54,7 @@
 	]
   v(0.5cm)
 }
-#show heading.where(level: 1): set heading(supplement: [Capítulo])
+#show heading.where(level: 1): set heading(supplement: get-i8n("chapter"))
 #show heading.where(level: 1): it => {
   [
     #{
@@ -88,29 +112,7 @@
 
 #pagebreak()
 
-#show outline.entry.where(
-  level: 1
-): set block(above: 1.2em)
-
-#show outline.entry.where(
-  level: 1
-): set text(weight: "bold")
-#set outline.entry(fill: repeat([.], gap: 0.45em))
-#show outline.entry.where(
-  level: 1
-): set outline.entry(fill: none)
-
-#show outline.entry.where(
-  level: 1
-): it => {
-  let sz = custom_outline_size.at(it.element.location())
-  let space = custom_outline_space.at(it.element.location())
-  set text(size: sz) if sz != none
-  set block(above: space) if space != none
-  it
-  // [#(sz, it.element.location()) #it]
-}
-#outline(title: "Tabla de contenidos")
+#outline(title: get-i8n("toc"))
 
 
 #set heading(numbering: "1.")
@@ -138,21 +140,21 @@
 
   custom_outline_size.update(large_size)
   custom_outline_space.update(2em)
-  heading([Anexos], numbering: none)
+  heading(get-i8n("annex-pl"), numbering: none)
   custom_outline_size.update(none)
   custom_outline_space.update(none)
 
   set align(center)
   v(1fr)
   text(size: Huge_size + 2pt)[
-    Anexos
+    *#get-i8n("annex-pl")*
     #metadata([]) <chapter-start>
   ]
   v(1fr)
 }
 
 #show heading: set heading(numbering: "A.1.")
-#show heading.where(level: 1): set heading(numbering: "A.", supplement: [Anexo])
+#show heading.where(level: 1): set heading(numbering: "A.", supplement: get-i8n("annex"))
 #counter(heading).update(0)
 
 #include "secciones/anexo1.typ"

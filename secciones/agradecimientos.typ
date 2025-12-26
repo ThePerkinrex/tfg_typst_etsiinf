@@ -1,12 +1,13 @@
 #import "../sizes.typ": *
 #import "../util.typ": custom_outline_size
+#import "../translation.typ": get-i8n
 
 
 #{
   show heading: none
 
   custom_outline_size.update(small_size)
-  heading([Agradecimientos])
+  heading(get-i8n("acknowledgements"))
   custom_outline_size.update(none)
 }
 #heading(outlined: false, bookmarked: false)[]
