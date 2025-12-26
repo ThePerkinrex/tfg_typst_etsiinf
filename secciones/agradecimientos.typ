@@ -21,3 +21,5 @@ Aquí puedes colocar una dedicatoria\
 o unos agradecimientos\
 puedes usar varias líneas o varios párrafos
 
+Si no quieres puedes comentar el include el fichero principal.
+

@@ -1,0 +1,42 @@
+recomendaciones:
+  type: web
+  title: Recomendaciones sobre el contenido de la Memoria Final
+  author: ETSIINF
+  date: 2017
+  url: http://www.fi.upm.es/?pagina=1475
+
+bibtex:
+  type: web
+  title: BibTeX.org
+  author: Alexander Feder
+  date: 2006
+  url: http://www.bibtex.org
+
+hayagriva-docs:
+  type: web
+  title: "Hayagriva: Bibliographic database management for Typst"
+  author: "Typst Project"
+  url: https://github.com/typst/hayagriva
+  description: "Official documentation and reference for the Hayagriva YAML-based bibliography format."
+
+stallings2006:
+  type: book
+  title: Computer Organization and Architecture
+  author: William Stallings
+  date: 2006
+  publisher: Prentice Hall
+
+codly:
+  type: web
+  title: "codly: beautiful code presentation for Typst"
+  author: "Stephen Waits"
+  date: 2024
+  url: https://typst.app/universe/package/codly/
+  description: "A Typst package for enhanced code block presentation with line numbering, highlighting, and more."
+
+typst-raw:
+  type: web
+  title: "Raw Text and Code Blocks – Typst Documentation"
+  author: "Typst"
+  url: https://typst.app/docs/reference/text/raw/
+  description: "Official reference documentation for the raw element in Typst, used for syntax highlighting and code blocks."

@@ -1,8 +1,18 @@
 #import "sizes.typ": *
-#import "util.typ":custom_outline_size
+#import "util.typ":custom_outline_size, custom_outline_space
+#import "@preview/codly:1.3.0": *
+#import "@preview/codly-languages:0.1.1": *
+#import "@preview/drafting:0.2.2": *
+
+
 #set text(lang: "es", size: normal_size)
-#set page(paper: "a4")
+#set page(paper: "a4", margin: (y: 3.5cm, x: 3cm))
+
 #set par(justify: true)
+
+#show: codly-init.with()
+
+#codly(languages: codly-languages, )
 
 #let page_zone = counter(<page-zone>)
 
@@ -13,7 +23,7 @@
   v(0.7cm)
   it
 	if it.level == 2 [
-		#metadata([#counter(heading).display("1.") #it.body]) <section-start>
+		#metadata([#counter(heading).display(it.numbering) #it.body]) <section-start>
 	]
   v(0.5cm)
 }
@@ -28,15 +38,15 @@
     // #set page(numbering: none)
     // #
     #v(4.5cm)
-    #if heading.numbering != none [
+    #if it.numbering != none [
       #set text(size: LARGE_size)
-      #heading.supplement #counter(heading).display("1")
+      #it.supplement #counter(heading).display(it.numbering.replace(regex("\."), ""))
     ]
 
     #set text(size: Huge_size + 2pt)
     #it.body
 		#metadata([
-			#if heading.numbering != none [ #heading.supplement #counter(heading).display("1.") ] #it.body]) <chapter-start>
+			#if it.numbering != none [ #it.supplement #counter(heading).display(it.numbering) ] #it.body]) <chapter-start>
     #v(1cm)
   ]
 }
@@ -82,18 +92,19 @@
 #show outline.entry.where(
   level: 1
 ): set text(weight: "bold")
-// #set outline.entry(fill: repeat([.], gap: 0.35em))
+#set outline.entry(fill: repeat([.], gap: 0.45em))
+#show outline.entry.where(
+  level: 1
+): set outline.entry(fill: none)
 
 #show outline.entry.where(
   level: 1
 ): it => {
   let sz = custom_outline_size.at(it.element.location())
-  if sz != none {
-    set text(size: sz)
-    it
-  }else{
-    it
-  }
+  let space = custom_outline_space.at(it.element.location())
+  set text(size: sz) if sz != none
+  set block(above: space) if space != none
+  it
   // [#(sz, it.element.location()) #it]
 }
 #outline(title: "Tabla de contenidos")
@@ -108,44 +119,40 @@
 #counter(page).update(1)
 #set page("a4", numbering: "1")
 
-= Introducción
-== Hello 1
-#lorem(100)
+#include "secciones/intro.typ"
+#include "secciones/desarrollo.typ"
+#include "secciones/impacto.typ"
+#include "secciones/conclusiones.typ"
+
+#bibliography("secciones/biblio.yml")
+
+#{
+  show heading: none
+  {
+    set page(header: none, numbering: none)
+    pagebreak(weak: true, to: "odd")
+  }
+
+  custom_outline_size.update(large_size)
+  custom_outline_space.update(2em)
+  heading([Anexos], numbering: none)
+  custom_outline_size.update(none)
+  custom_outline_space.update(none)
+
+  set align(center)
+  v(1fr)
+  text(size: Huge_size + 2pt)[
+    Anexos
+    #metadata([]) <chapter-start>
+  ]
+  v(1fr)
+}
+
+#show heading: set heading(numbering: "A.1.")
+#show heading.where(level: 1): set heading(numbering: "A.", supplement: [Anexo])
+#counter(heading).update(0)
+
+#include "secciones/anexo1.typ"
 
 
-#lorem(100)
-
-#lorem(100)
-
-#lorem(100)
-
-
-#lorem(100)
-
-
-#lorem(100)
-
-#lorem(100)
-
-#lorem(100)
-
-== Hello 2
-#lorem(100)
-
-
-#lorem(100)
-
-#lorem(100)
-
-#lorem(100)
-
-== Hello 3
-
-#lorem(50)
-
-= B
-hdfuisghdufisdghdulaghsdl
-
-== A
-#lorem(50)
 
