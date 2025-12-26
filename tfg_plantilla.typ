@@ -1,7 +1,10 @@
 #import "sizes.typ": *
+#import "util.typ":custom_outline_size
 #set text(lang: "es", size: normal_size)
 #set page(paper: "a4")
 #set par(justify: true)
+
+#let page_zone = counter(<page-zone>)
 
 #include "portada/portada.typ"
 
@@ -37,8 +40,33 @@
     #v(1cm)
   ]
 }
+#set page(header: context {
+  let matches = query(selector(<chapter-start>))
+  let current_page = counter(page).get().at(0)
+  let current_zone = page_zone.get().at(0)
+  let chapter-start = matches.find(m => counter(page).at(m.location()).at(0) == current_page and page_zone.at(m.location()).at(0) == current_zone)
+
+  if chapter-start == none {
+    if calc.odd(current_page) {
+      let current_section = query(selector(<section-start>).before(here())).last(default: none)
+      if current_section != none {
+        let c = counter(heading).get()
+				set align(right)
+        // [*#current_section.supplement #numbering("1.", c.at(0), c.at(1)) #current_section.body*]
+        [*#current_section.value*]
+      }
+    } else {
+      let current_chapter = query(selector(<chapter-start>).before(here())).last(default: none)
+      if current_chapter != none {
+        [*#current_chapter.value*]
+      }
+    }
+    move(line(length: 100%), dy: -0.25cm)
+  }
+})
 
 #pagebreak()
+#metadata("roman-numbers")<page-zone>
 #counter(page).update(1)
 #set page("a4", numbering: "i")
 
@@ -47,6 +75,27 @@
 
 #pagebreak()
 
+#show outline.entry.where(
+  level: 1
+): set block(above: 1.2em)
+
+#show outline.entry.where(
+  level: 1
+): set text(weight: "bold")
+// #set outline.entry(fill: repeat([.], gap: 0.35em))
+
+#show outline.entry.where(
+  level: 1
+): it => {
+  let sz = custom_outline_size.at(it.element.location())
+  if sz != none {
+    set text(size: sz)
+    it
+  }else{
+    it
+  }
+  // [#(sz, it.element.location()) #it]
+}
 #outline(title: "Tabla de contenidos")
 
 
@@ -55,34 +104,12 @@
   set page(header: none, numbering: none)
   pagebreak(weak: true, to: "odd")
 }
+#metadata("arabic-numbers")<page-zone>
 #counter(page).update(1)
-#set page("a4", numbering: "1", header: context {
-  let matches = query(selector(<chapter-start>))
-  let current = counter(page).get().at(0)
-  let chapter-start = matches.find(m => counter(page).at(m.location()).at(0) == current)
-
-  if chapter-start == none {
-    if calc.odd(current) {
-      let current_section = query(heading.where(level: 2).before(here())).last(default: none)
-      if current_section != none {
-        let c = counter(heading).get()
-				set align(right)
-        [*#current_section.supplement #numbering("1.", c.at(0), c.at(1)) #current_section.body*]
-      }
-    } else {
-      let current_chapter = query(heading.where(level: 1).before(here())).last(default: none)
-      if current_chapter != none {
-        [*#current_chapter.supplement #numbering("1.", counter(heading).get().at(0)) #current_chapter.body*]
-      }
-    }
-    move(line(length: 100%), dy: -0.25cm)
-  }else{
-		[#matches.last().value #current]
-	}
-})
+#set page("a4", numbering: "1")
 
 = Introducción
-== Hello
+== Hello 1
 #lorem(100)
 
 
@@ -102,7 +129,7 @@
 
 #lorem(100)
 
-== Hello
+== Hello 2
 #lorem(100)
 
 
@@ -111,6 +138,14 @@
 #lorem(100)
 
 #lorem(100)
+
+== Hello 3
+
+#lorem(50)
 
 = B
 hdfuisghdufisdghdulaghsdl
+
+== A
+#lorem(50)
+

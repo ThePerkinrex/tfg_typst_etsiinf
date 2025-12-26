@@ -1,10 +1,14 @@
 #import "../sizes.typ": *
+#import "../util.typ": custom_outline_size
 
 #{
-  show heading: none
-  heading(text(size: small_size)[Resumen])
+  custom_outline_size.update(small_size)
+  [= Resumen]
+  custom_outline_size.update(none)
 }
-#heading(outlined: false, bookmarked: false)[Resumen]
+// #state("heading_outline_size").update(_ => small_size)
+
+// #state("heading_outline_size").update(_ => none)
 
 #lorem(200)
 
@@ -12,10 +16,10 @@
 
 
 #{
-  show heading: none
-  heading(text(size: small_size)[Abstract])
+  custom_outline_size.update(small_size)
+  [= Abstract]
+  custom_outline_size.update(none)
 }
-#heading(outlined: false, bookmarked: false)[Abstract]
 
 #lorem(200)
 

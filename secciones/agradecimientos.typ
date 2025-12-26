@@ -1,8 +1,13 @@
 #import "../sizes.typ": *
+#import "../util.typ": custom_outline_size
+
 
 #{
   show heading: none
-  heading(text(size: small_size)[Agradecimientos])
+
+  custom_outline_size.update(small_size)
+  heading([Agradecimientos])
+  custom_outline_size.update(none)
 }
 #heading(outlined: false, bookmarked: false)[]
 
