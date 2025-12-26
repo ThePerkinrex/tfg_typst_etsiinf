@@ -21,20 +21,18 @@ El esquema básico de una memoria final de TFG es el siguiente:
 
 En cualquier caso, es el tutor del trabajo quien indicará a su estudiante la estructura de memoria final que mejor se ajuste al trabajo desarrollado.
 
-#margin-note[
-  Con respecto al formato, se seguirán las siguientes pautas, que se muestran en esta plantilla:
-  - _Formato:_ un único fichero PDF (recomendable que su tamaño no supere los $20$ Megas, no pudiendo ser superior a $50$ Megas), y opcionalmente un fichero comprimido para presentar código, ficheros de multimedia, etc. (de tamaño inferior a $10$ Megas)
-  - _Tamaño de papel:_ DIN A4 a doble cara
-  - _Portada:_ tal y como se recoge en las plantillas.
-  - _Tipo de letra para texto._ Preferiblemente "Bookman Old Style" $11$ puntos o equivalente, en negro.
-  - _Tipo de letra para código fuente:_ "Consolas" o "Roboto mono".
-  - _Márgenes:_ superior e inferior $3.5$ cm, izquierdo y derecho $3.0$ cm.
-  - _Superficie del texto:_ $22.5$ cm de alto (aproximadamente $40$ líneas) y $15$ cm de ancho.
-  - _Cabecera y pies:_ fuera de la superficie del texto.
-  - _Secciones y subsecciones:_ reseñadas con numeración decimal a continuación del número del capítulo. Ej.: subsecciones 2.3.1.
-  - _Números de página:_ siempre centrado en margen inferior, página 1 comienza en capítulo 1, todas las secciones anteriores al capítulo 1 en número romano en minúscula (i, ii, iii…).
-  - _Bibliografía:_ según recomendaciones de la IEEE #link("https://www.etsiinf.upm.es/docs/estudios/grado/1475_ieeecitationref.pdf")[(ver enlace)]. En principio la plantilla sigue dichas recomendaciones si metes tu bibliografía en formato bib.
-][TODO Revisar que se cumple esto]
+Con respecto al formato, se seguirán las siguientes pautas, que se muestran en esta plantilla:
+- _Formato:_ un único fichero PDF (recomendable que su tamaño no supere los $20$ Megas, no pudiendo ser superior a $50$ Megas), y opcionalmente un fichero comprimido para presentar código, ficheros de multimedia, etc. (de tamaño inferior a $10$ Megas)
+- _Tamaño de papel:_ DIN A4 a doble cara
+- _Portada:_ tal y como se recoge en las plantillas.
+- _Tipo de letra para texto._ #margin-note[Preferiblemente "Bookman Old Style" $11$ puntos o equivalente, en negro.][TODO: Incluir esta fuente de alguna manera]
+- _Tipo de letra para código fuente:_ #margin-note["Consolas" o "Roboto mono".][TODO Revisar si esta fuente es correcta]
+- _Márgenes:_ superior e inferior $3.5$ cm, izquierdo y derecho $3.0$ cm.
+- _Superficie del texto:_ $22.5$ cm de alto (aproximadamente $40$ líneas) y $15$ cm de ancho.
+- _Cabecera y pies:_ fuera de la superficie del texto.
+- _Secciones y subsecciones:_ reseñadas con numeración decimal a continuación del número del capítulo. Ej.: subsecciones 2.3.1.
+- _Números de página:_ siempre centrado en margen inferior, página 1 comienza en capítulo 1, todas las secciones anteriores al capítulo 1 en número romano en minúscula (i, ii, iii…).
+- _Bibliografía:_ según recomendaciones de la IEEE #link("https://www.etsiinf.upm.es/docs/estudios/grado/1475_ieeecitationref.pdf")[(ver enlace)]. En principio la plantilla sigue dichas recomendaciones si metes tu bibliografía en formato bib.
 
 #v(1em) // Espacio vertical equivalente a \medskip
 
