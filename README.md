@@ -29,4 +29,5 @@ Hay muchos aspectos de esta plantilla que se pueden mejorar, entre ellas:
 
 - Analizar la mejora en la accesibilidad al contenido de los
   documentos (etiquetado)
-- Permitir que la plantilla sea multilingüe, al menos español/inglés, se ha empezado con el archivo `translations.typ`, queda analizar que otras partes habría que traducir, para integrarlo
+- Permitir que la plantilla sea multilingüe, al menos español/inglés, se ha empezado con el archivo `translations.typ`, queda analizar que otras partes habría que traducir, para integrarlo.
+- Revisar que las fuentes usadas, las que incluye Typst embebidas, son correctas, o es necesario incluir otras.
