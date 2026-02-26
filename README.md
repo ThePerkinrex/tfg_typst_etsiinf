@@ -1,3 +1,5 @@
+*Plantilla basada en la desarrollada originalmente por Ángel Herranz para LaTeX: https://github.com/aherranz/tfg_latex_etsiinf*
+
 # Plantilla Typst para Memoria de Trabajo Fin de Grado/Master de la ETSIINF / UPM
 
 Para usar esta plantilla te recomendamos:
@@ -20,8 +22,9 @@ Para usar esta plantilla te recomendamos:
 Ahora ya puedes generar el PDF ejecutando el siguiente mandato en tu terminal:
 
 ```bash
-typst compile tfg_etsiinf_LuisAmigo.typ
+typst compile --font-path ./urw-base35-fonts/ tfg_etsiinf_LuisAmigo.typ
 ```
+
 
 ## TODO
 
@@ -30,4 +33,9 @@ Hay muchos aspectos de esta plantilla que se pueden mejorar, entre ellas:
 - Analizar la mejora en la accesibilidad al contenido de los
   documentos (etiquetado)
 - Permitir que la plantilla sea multilingüe, al menos español/inglés, se ha empezado con el archivo `translations.typ`, queda analizar que otras partes habría que traducir, para integrarlo.
-- Revisar que las fuentes usadas, las que incluye Typst embebidas, son correctas, o es necesario incluir otras.
+
+
+# Fuentes y licencias
+Se han incluido las fuentes URW Bookman, versión con licencia libre de las fuentes de la familia Bookman Old Style (y las usadas en el paquete bookman de LaTeX).
+
+Estas fuentes se encuentran bajo la licencia AGPL-3 con una excepción, tal y como se puede leer en `urw-base35-fonts/LICENSE` y `urw-base35-fonts/COPYING`
