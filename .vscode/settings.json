@@ -1,3 +1,6 @@
 {
-	"ltex.language": "es"
+	"ltex.language": "es",
+	"tinymist.fontPaths": [
+		"${workspaceFolder}/urw-base35-fonts"
+	]
 }

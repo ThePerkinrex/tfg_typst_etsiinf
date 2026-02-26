@@ -25,8 +25,8 @@ Con respecto al formato, se seguirán las siguientes pautas, que se muestran en 
 - _Formato:_ un único fichero PDF (recomendable que su tamaño no supere los $20$ Megas, no pudiendo ser superior a $50$ Megas), y opcionalmente un fichero comprimido para presentar código, ficheros de multimedia, etc. (de tamaño inferior a $10$ Megas)
 - _Tamaño de papel:_ DIN A4 a doble cara
 - _Portada:_ tal y como se recoge en las plantillas.
-- _Tipo de letra para texto._ #margin-note[Preferiblemente "Bookman Old Style" $11$ puntos o equivalente, en negro.][TODO: Incluir esta fuente de alguna manera]
-- _Tipo de letra para código fuente:_ #margin-note["Consolas" o "Roboto mono".][TODO Revisar si esta fuente es correcta]
+- _Tipo de letra para texto._ Preferiblemente "Bookman Old Style" $11$ puntos o equivalente, en negro.
+- _Tipo de letra para código fuente:_ "Consolas" o "Roboto mono".
 - _Márgenes:_ superior e inferior $3.5$ cm, izquierdo y derecho $3.0$ cm.
 - _Superficie del texto:_ $22.5$ cm de alto (aproximadamente $40$ líneas) y $15$ cm de ancho.
 - _Cabecera y pies:_ fuera de la superficie del texto.
@@ -61,10 +61,10 @@ Lo que puedes escribir en los ficheros Typst (ficheros `*.typ`) deberá seguir u
 Cuando ejecutas el _compilador_ (ej. `typst compile`) se genera un PDF. Si usas Visual Studio Code con Tinymist, no hace falta compilar para ver la previsualización, se mostrará en tiempo real si se abre el menú "Preview Opened File". En otros entornos, puedes usar `typst watch` para recompilar el PDF de manera dinámica.
 
 
-Para compilar la versión final del documento, basta con llamar al siguiente mandato:
+Para compilar la versión final del documento, basta con llamar al siguiente mandato (es necesario incluir la ubicación de las fuentes si no están instaladas):
 
 ```bash
-typst compile tfg_etsiinf_LuisAmigo.typ
+typst compile --font-path ./urw-base35-fonts/ tfg_etsiinf_LuisAmigo.typ
 ```
 
 En Visual Studio Code, también añade la extensión opciones para realizar esto sin la línea de comandos.

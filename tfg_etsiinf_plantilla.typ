@@ -7,7 +7,11 @@
 
 
 #set text(lang: "es", size: normal_size)
+// #set text(font: "Bookman Old Style")
+#set text(font: ("URW Bookman", "Bookman Old Style", "libertinus serif"))
 #set page(paper: "a4", margin: (y: 3.5cm, x: 3cm))
+
+#show smallcaps: set text(font: "Latin Modern Roman Caps")
 
 // Si quieres usar comillas altas en vez de angulares, descomenta la siguiente linea
 // #set smartquote(quotes: "“”")
