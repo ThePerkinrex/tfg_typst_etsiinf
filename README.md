@@ -10,7 +10,7 @@ Para usar esta plantilla te recomendamos:
    clones** este repo.
 1. Cambiar el nombre del documento principal (`tfg_etsiinf_plantilla.typ`) para
    que incluya el nombre del alumno (ej. `tfg_etsiinf_LuisAmigo.typ`).
-2. Modifica los datos de tu TFG en `datos_tfg.typ`.
+2. Modifica los datos de tu TFG en `datos_tfg.typ` y si quieres ajusta el género de las palabras "Autor(a)" y "Tutor(a)" en `translations.typ`.
 3. Observa el fichero documento principal y cómo se van incluyendo los
    contenidos de la memoria a partir de los ficheros en el directorio
    `secciones`.

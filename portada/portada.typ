@@ -1,5 +1,7 @@
 #import "../data.typ": *
 #import "../sizes.typ": *
+#import "../translation.typ": get-i8n
+
 
 #context {
   grid(
@@ -32,16 +34,12 @@
     set align(center)
     context {
       set text(size: Large_size)
-      [
-        #estudios en #titulo_estudios
-      ]
+      get-i8n("studies", estudios, titulo_estudios)
     }
     v(1cm)
     context {
       set text(size: huge_size)
-      [
-        Trabajo de Fin de #estudios
-      ]
+      get-i8n("thesis_kind", estudios)
     }
     v(0.5cm)
     context {
@@ -56,8 +54,8 @@
   context {
     set text(size: large_size)
     [
-      Autor: #nombre_autor\
-      Tutor(a): #nombre_tutor
+      #get-i8n("author"): #nombre_autor\
+      #get-i8n("tutor"): #nombre_tutor
     ]
   }
 
@@ -72,17 +70,17 @@
 
 
   [
-    Este Trabajo Fin de #estudios se ha depositado en la ETSI Informáticos de la Universidad Politécnica de Madrid para su defensa.
-  ]
+    Este #get-i8n("thesis_kind", estudios) se ha depositado en la ETSI Informáticos de la Universidad Politécnica de Madrid para su defensa.
+  ] // TODO traducir?
 
   v(4cm)
   [
-    _Trabajo Fin de #estudios _\
-    #estudios en #titulo_estudios
+    _#get-i8n("thesis_kind", estudios)_\
+    #get-i8n("studies", estudios, titulo_estudios)
 
 
   ]
-  stack(dir: ltr, [_Título:_], h(0.5cm), block(width: 88%)[#titulo_trabajo])
+  stack(dir: ltr, [_#get-i8n("title"):_], h(0.5cm), block(width: 88%)[#titulo_trabajo])
 
   [#display_fecha]
 
@@ -93,8 +91,8 @@
     columns: (auto, 85%),
     column-gutter: 0.5cm,
 		row-gutter: 0.3cm,
-    [_Autor:_], [#nombre_autor],
-		[_Tutor:_], [
+    [_#get-i8n("author"):_], [#nombre_autor],
+		[_#get-i8n("tutor"):_], [
     #nombre_tutor\
     #departamento\
     Escuela Técnica Superior de Ingenieros Informáticos\

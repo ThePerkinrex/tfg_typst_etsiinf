@@ -1,12 +1,14 @@
 #import "sizes.typ": *
 #import "util.typ":custom_outline_size, custom_outline_space
 #import "translation.typ": get-i8n
+#import "data.typ": *
 #import "@preview/codly:1.3.0": *
 #import "@preview/codly-languages:0.1.1": *
 #import "@preview/drafting:0.2.2": *
 
 
-#set text(lang: "es", size: normal_size)
+#set document(author: nombre_autor, title: titulo_trabajo, date: fecha)
+#set text(size: normal_size, lang: lang)
 // #set text(font: "Bookman Old Style")
 #set text(font: ("URW Bookman", "Bookman Old Style", "libertinus serif"))
 #set page(paper: "a4", margin: (y: 3.5cm, x: 3cm))
@@ -20,7 +22,8 @@
 
 #show: codly-init.with()
 
-#codly(languages: codly-languages, )
+// Aqui puede cambiar los bloques de codigo
+#codly(languages: codly-languages, number-format: it => text(numbering("1",it), fill: gray.darken(15%)))
 
 #let page_zone = counter(<page-zone>)
 
