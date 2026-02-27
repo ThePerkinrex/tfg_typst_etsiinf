@@ -171,7 +171,7 @@ El alineado de todo en Typst es por defecto a la izquierda (en modos LTR).
 Puedes poner cualquier cosa dentro de una figura. Por ejemplo la figura @fig:escudo. Typst coloca las figuras automáticamente, pero puedes forzar ubicación con argumentos en `figure()`.
 
 #figure(
-  image("../portada/escudo_etsiinf.png", width: 33%), // TODO: Asegúrate de que la ruta de la imagen sea correcta
+  image("../portada/escudo_etsiinf.png", width: 33%),
   caption: [El escudo de la ETSIINF],
 ) <fig:escudo>
 
@@ -179,7 +179,7 @@ Una vez que has incluido una figura la puedes referenciar tantas veces como quie
 
 Si simplemente quieres incluir un gráfico que fluya con el texto puedes hacerlo cuando quieras como por ejemplo ahora mismo:
 #align(center)[
-  #image("../portada/escudo_upm.png", width: 15%) // TODO: Ajusta la ruta y extensión
+  #image("../portada/escudo_upm.png", width: 15%)
 ]
 
 == Matemáticas
@@ -200,9 +200,7 @@ Esta es la cita bibliográfica de un libro @stallings2006.
 
 === Ejemplo de "por hacer" (todonotes)
 
-// TODO: Typst no tiene un paquete estándar idéntico a todonotes visualmente en los márgenes instalado por defecto,
-// pero puedes crear una función simple o importar un paquete como "drafting".
-// Aquí simulo una nota visual:
+
 #margin-note[TODO: como este en el margen]
 
 #inline-note[TODO inline: O como este "inline"]
